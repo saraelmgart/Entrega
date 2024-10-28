@@ -52,16 +52,33 @@ a {
     grid-template-areas:
       "Intro Intro"
       "Iz-1 De-1"
-      "Footer Footer";
 }
   
-.Intro { grid-area: Intro; }
+.Intro { 
+    grid-area: Intro; 
+}
   
-.Footer { grid-area: Footer; }
+.Footer { 
+    grid-area: Footer; 
+    margin-top: 20px; /* Kan skapa avstånd ovanför footern */
+}
   
 .Iz-1 { grid-area: Iz-1; }
   
 .De-1 { grid-area: De-1; }
+
+.map-container {
+    display: grid;                /* Aktiverar grid */
+    place-items: center;          /* Centrerar både horisontellt och vertikalt */
+    height: 400px;                /* Sätt en höjd för att se vertikal centrering */
+    margin-bottom: 20px; /* Kan skapa avstånd under kartan */
+}
+
+.instagram-container {
+    display: flex;
+    justify-content: center; /* Centrera horisontellt */
+    margin: 20px 0; /* Justera marginalen vid behov */
+}
 
   
 body {
@@ -81,15 +98,7 @@ body {
 /* För skärmar som är mindre än 768px */
 @media (max-width: 850px) {
     
-
     .Logo_text {
         display: none;              /* Döljer logotexten */
-    }
-}
-
-/* För skärmar som är mindre än 480px */
-@media (max-width: 480px) {
-    .header {
-        
     }
 }
