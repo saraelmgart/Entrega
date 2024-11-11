@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">    <!-- The page is in english -->
+<head>
+    <meta charset="UTF-8">  <!-- Defining what characters the page consist of -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/f9f3bb_cfc2f7849fca499c846ad34419a250d2~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Vakant.png">                           <!-- Icon of the page -->
+    <title>Workshops - TLTH Dance Courses</title>   <!-- Title of the tab -->
+    <link rel="stylesheet" href="style.css">        <!-- Link to the CSS file -->
+</head>
+<body>
+    <!-- Same header in all of the pages -->
+    <header class="header">
+        <div class="container_header">  <!-- One div for the whole header -->
+            <div class="Logo">          <!-- One div specifically for the logo and the header text -->
+                
+                <a href="index.html">   <!-- The foto should link to the home page -->
+                <img src="https://static.wixstatic.com/media/f9f3bb_b08ed45e46b942f285d39d64b4ff7a11~mv2.png" 
+                    alt="Logo TLTH Dance Courses" width="100px" height="100%">
+                </a>
+                  
+            </div>                      <!-- End of the complete logo div -->
+
+            <div class="Logo_text"><h1>TLTH Dance Courses</h1></div>  
+
+            <!-- One div for the links -->
+            <div class="link_container">
+                <a href="index.html">Home</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="bugg.html">Bugg</a>
+                <a href="course_reg.html">Class Registration</a>
+            </div>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>      <!-- End of complete header div -->
+    </header>
+
+    <h1 class="page-title">Workshops</h1>    <!-- Title of the page -->
+
+    <!-- Workshops content -->
+
+    <div class="vertical-block">
+        <div class="two-columns">
+            <div class="one-column left-column">
+                <!-- Overviewing information about the workshops -->
+                <h2>What are our workshops?</h2>
+                <p>Welcome to TLTH Dance Courses' workshops! Here you can learn various dance styles in a fun and welcoming environment. Our workshops are meant for both beginners and experienced dancers. Each week we focus on one specific dance style. </p>
+
+                <p>The idea of the workshops was created in 2022 when a group of us danced together in a show at the Lunda Carneval. We all had a different dance backgroud and wanted to continue dancing together while learning from one another. Wanting to give others the chance to join us in this, the workshops were created as a part of TLTH Dance Courses. </p>
+            </div>
+            <div class="one-column right-column">
+                <!-- Group photo of one of the classes -->
+                <img src="./Fotos/Group_foto_bandy.JPEG" alt="Dance Workshop" 
+                     style="width: 100%; height: auto; border-radius: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-block">
+        <!-- Another vertical block with two subblocks with two columns -->
+        <div class="two-columns">
+            <div class="one-column left-column">
+                <!-- Image grid 3x2 to the left in this block -->
+                <div class="image-grid">
+                    <div class="grid-item" onclick="showTeacherInfo('thea')">
+                        <img src="./Fotos/Thea.png" alt="Thea" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Thea</h3>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="showTeacherInfo('tindra')">
+                        <img src="./Fotos/Tindra_cheer.JPEG" alt="Tindra" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Tindra</h3>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="showTeacherInfo('sara')">
+                        <img src="./Fotos/Sara_iguazu.PNG" alt="Sara" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Sara</h3>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="showTeacherInfo('ville')">
+                        <img src="./Fotos/Ville.jpg" alt="Sara" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Ville</h3>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="showTeacherInfo('annie')">
+                        <img src="./Fotos/Annie.JPEG" alt="Sara" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Annie</h3>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="showTeacherInfo('rebecka')">
+                        <img src="./Fotos/Rebecka.png" alt="Sara" class="grid-image">
+                        <div class="grid-text">
+                            <h3>Rebecka</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="one-column right-column">
+                <!-- Overviewing info about the teachers to the right -->
+                <h2>Who are we?</h2>
+                <div id="default-info">
+                    <p>We are a group of students at Lund University who love to dance. While we are neither professional dancers nor professional teachers, we have all attended dance classes for the majority of our lives and want to share our knowledge and passion for dance with you.</p>
+                    <p>Do you also love to dance? Join us on thursdags! If you also want to teach in our classes, please contact us on dansmastare@tlth.se.</p>
+                </div>
+                <div id="teacher-popup" class="teacher-popup">
+                    <button class="close-button" onclick="closeTeacherInfo()">&times;</button>
+                    <div id="teacher-info"></div>
+                        <!-- JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup with information about the teachers, written with JavaScript -->
+    
+    <script>
+        const teacherData = {
+            'thea': {
+                name: 'Thea',
+                description: 'My name is Thea, I study to become a doctor at LU and have danced Feminine Vibe and Contemporary for 10 years.',
+                styles: 'Feminine Vibe, Contemporary'
+            },
+            'tindra': {
+                name: 'Tindra',
+                description: 'I am Tindra, I study to become an engineer in Nanotechnology and started dancing before I could walk. Today I compete in Disco, English Freestyle and Show but love to dance all styles.',
+                styles: 'Disco, Hip Hop, Musical Dance'
+            },
+            'sara': {
+                name: 'Sara',
+                description: 'My name is Sara and I study engineering Mathematics. I started dancing Disco and Contemporary at 11 years old. Since then I have changed styles back and forth and currently my favourites are Salsa, Cuban Rumba and Contemporary. ',
+                styles: 'Salsa, Bachata'
+            },
+            'ville': {
+                name: 'Ville',
+                description: 'My name is Ville and I study engineering Physics. Dancing has always been a part of my life. Street and Hip Hop are my favourite styles.',
+                styles: 'Hip Hop'
+            },
+            'annie': {
+                name: 'Annie',
+                description: 'My name is Annie and I study engineering Physics. I have danced contemporary and jazz for over 10 years now and have been teaching a bit at my old dance school in Klippan, Skåne. Jazz is definitely my favourite style.',
+                styles: 'Jazz, Contemporary'
+            },
+            'rebecka': {
+                name: 'Rebecka',
+                description: 'I am Rebecka and I study Engineering Physics. I study engineering physics. Cheerleading has been a big part of my life since I was 7. I went to the US on exchange last year and picked it up once again after quiting when starting university in Lund.',
+                styles: 'Cheer'
+            },
+        };
+
+        function showTeacherInfo(teacherId) {
+            const popup = document.getElementById('teacher-popup');
+            const teacherInfo = document.getElementById('teacher-info');
+            const teacher = teacherData[teacherId];
+
+            if (teacher) {
+                teacherInfo.innerHTML = `
+                    <h3>${teacher.name}</h3>
+                    <p>${teacher.description}</p>
+                    <p><strong>Teaching:</strong> ${teacher.styles}</p>
+                `;
+                popup.style.display = 'block';
+            }
+        }
+
+        function closeTeacherInfo() {
+            const popup = document.getElementById('teacher-popup');
+            popup.style.display = 'none';
+        }
+    </script>
+
+    <!-- Same footer as index.html -->
+    
+    <footer>
+        <div class="footer-content">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><b>Email:</b> dansmastare@tlth.se</p>
+                <p><b>Instagram:</b> @tlthsdanskurser</p>
+                <p><b>Location:</b> Teknologkåren, Lund, Sweden</p>
+            </div>
+    
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>TLTH Dance Courses offers various dance classes for students at Lund University.</p>
+                <p>Join us to learn new dance styles and meet fellow dance enthusiasts!</p>
+            </div>
+    
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="#workshops">Workshops</a></p>
+                <p><a href="#bugg">Bugg</a></p>
+                <p><a href="#registration">Class Registration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.link_container').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+

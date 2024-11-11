@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">    <!-- The page is in english -->
+<head>
+    <meta charset="UTF-8">  <!-- Defining what characters the page consist of -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/f9f3bb_cfc2f7849fca499c846ad34419a250d2~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Vakant.png">                           <!-- Icon of the page -->
+    <title>Bugg - TLTH Dance Courses</title>   <!-- Title of the tab -->
+    <link rel="stylesheet" href="style.css">        <!-- Link to the CSS file -->
+</head>
+<body>
+    <!-- Same header in all of the pages -->
+    <header class="header">
+        <div class="container_header">  <!-- One div for the whole header -->
+            <div class="Logo">          <!-- One div specifically for the logo and the header text -->
+                
+                <a href="index.html">   <!-- The foto should link to the home page -->
+                <img src="https://static.wixstatic.com/media/f9f3bb_b08ed45e46b942f285d39d64b4ff7a11~mv2.png" 
+                    alt="Logo TLTH Dance Courses" width="100px" height="100%">
+                </a>
+                  
+            </div>                      <!-- End of the complete logo div -->
+
+            <div class="Logo_text"><h1>TLTH Dance Courses</h1></div>  
+
+            <!-- One div for the links -->
+            <div class="link_container">
+                <a href="index.html">Home</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="bugg.html">Bugg</a>
+                <a href="course_reg.html">Class Registration</a>
+            </div>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>      <!-- End of complete header div -->
+    </header>
+
+    <h1 class="page-title">Bugg</h1>    <!-- Title of the page -->
+
+    <!-- Workshops content -->
+
+    <div class="vertical-block">
+        <h2 class="page-title">What is Bugg?</h2>
+        <div class="two-columns">
+            <div class="one-column wide-left-column">
+                <!-- Overviewing information about the workshops -->
+                
+                <p>Bugg is a Swedish partner dance that is danced to music in four-four time. It is a completely improvised dance where the leader guides the follower through various spins and turns. Bugg, along with foxtrot and one-step, is one of the most common social dances in Sweden.</p>
+                <p>As a partner dance, bugg differs from many other dances because the dancers do not hold each other, as in foxtrot and waltz, for example. Instead, they hold each other with one or both hands for most of the time and frequently change grips. Bugg was traditionally danced mostly to dance band music, but nowadays it is also danced to other popular music. As long as there is a beat to follow, it is possible to dance to all kinds of music.</p>
+
+
+            </div>
+            <div class="one-column narrow-right-column">
+                <!-- Video player with controls -->
+                <iframe width="100%" height="auto" style="border-radius: 10px;" 
+                        src="https://www.youtube.com/embed/egf5ZDDzF9E" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-block">
+        <h2 class="page-title">Our Teachers</h2>
+        <div class="two-columns">
+            <div class="one-column left-column">
+                <p>All our bugg courses are led by dance instructors who have been trained by the Swedish Dance Sport Federation. The instructurs also teach at Gåsasteget Dance Club in Lund.</p>
+                <p>No prevous dance experience is required to join our bugg courses. To the right you have an example of what you might learn in a beginners class. Note that the video is in swedish. The teachers are also happy to teach in english if needed.</p>
+            </div>
+            <div class="one-column right-column">
+                <iframe width="100%" height="auto" style="border-radius: 10px;" 
+                        src="https://www.youtube.com/embed/NRYiDLfrK0c" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Same footer as index.html -->
+    
+    <footer>
+        <div class="footer-content">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><b>Email:</b> dansmastare@tlth.se</p>
+                <p><b>Instagram:</b> @tlthsdanskurser</p>
+                <p><b>Location:</b> Teknologkåren, Lund, Sweden</p>
+            </div>
+    
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>TLTH Dance Courses offers various dance classes for students at Lund University.</p>
+                <p>Join us to learn new dance styles and meet fellow dance enthusiasts!</p>
+            </div>
+    
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="#workshops">Workshops</a></p>
+                <p><a href="#bugg">Bugg</a></p>
+                <p><a href="#registration">Class Registration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.link_container').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+

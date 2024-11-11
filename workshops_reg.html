@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">    <!-- The page is in english -->
+<head>
+    <meta charset="UTF-8">  <!-- Defining what characters the page consist of -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/f9f3bb_cfc2f7849fca499c846ad34419a250d2~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Vakant.png">                           <!-- Icon of the page -->
+    <title>Workshops Course Registration</title>   <!-- Title of the tab -->
+    <link rel="stylesheet" href="style.css">        <!-- Link to the CSS file -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Same header in all of the pages -->
+    <header class="header">
+        <div class="container_header">  <!-- One div for the whole header -->
+            <div class="Logo">          <!-- One div specifically for the logo and the header text -->
+                
+                <a href="index.html">   <!-- The foto should link to the home page -->
+                <img src="https://static.wixstatic.com/media/f9f3bb_b08ed45e46b942f285d39d64b4ff7a11~mv2.png" 
+                    alt="Logo TLTH Dance Courses" width="100px" height="100%">
+                </a>
+                  
+            </div>                      <!-- End of the complete logo div -->
+
+            <div class="Logo_text"><h1>TLTH Dance Courses</h1></div>  
+
+            <!-- One div for the links -->
+            <div class="link_container">
+                <a href="index.html">Home</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="bugg.html">Bugg</a>
+                <a href="course_reg.html">Class Registration</a>
+            </div>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>      <!-- End of complete header div -->
+    </header>
+
+    <h1 class="page-title">Workshops Course Registration</h1>    <!-- Title of the page -->
+
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <form action="#" method="POST" id="registrationForm" onsubmit="return validateForm()">
+            
+            <div class="name-row">
+                <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="discovery">Please let us know how you heard about TLTH Dance Courses:</label>
+                <select id="discovery" name="discovery" required>
+                    <option value="">Please select an option</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="friend">Friend or word of mouth</option>
+                    <option value="poster">Poster on campus</option>  
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">REGISTER</button>
+        </form>
+    </div>
+
+    
+    <script>
+    function validateEmail() {
+        const email = document.getElementById('email').value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+        return true;
+    }
+
+    function validatePhone() {
+        const phone = document.getElementById('phone').value;
+        // Accepts most international formats including:
+        // +1234567890, +12 345 678 90, 1234567890, 123-456-7890
+        const phoneRegex = /^[+]?[\s0-9-]{8,}$/;
+        
+        if (!phoneRegex.test(phone)) {
+            alert('Please enter a valid phone number\nThe number should contain at least 8 digits.\nYou may use spaces, hyphens, and the + prefix.');
+            return false;
+        }
+        return true;
+    }
+
+    function validateForm() {
+        if (!validateEmail() || !validatePhone()) {
+            return false;
+        }
+
+        // Get form data
+        const firstName = document.getElementById('firstname').value;
+        const lastName = document.getElementById('lastname').value;
+        const email = document.getElementById('email').value;
+
+        // Send email using EmailJS
+        emailjs.send("service_2lyo9f5", "template_nhiqdvx", {
+            to_name: `${firstName} ${lastName}`,
+            to_email: email,
+        }).then(
+            function(response) {
+                alert("Registration successful! Please check your email for confirmation.");
+                document.getElementById('registrationForm').reset();
+            },
+            function(error) {
+                alert("Sorry, there was an error. Please try again later.");
+            }
+        );
+
+        return false; // Prevent default form submission
+    }
+    </script>
+    
+    <script>
+        (function() {
+            emailjs.init("uCFUKrreqcwO2JARi");
+        })();
+    </script>
+    
+    <!-- Same footer as index.html -->
+    
+    <footer>
+        <div class="footer-content">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><b>Email:</b> dansmastare@tlth.se</p>
+                <p><b>Instagram:</b> @tlthsdanskurser</p>
+                <p><b>Location:</b> Teknologkåren, Lund, Sweden</p>
+            </div>
+    
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>TLTH Dance Courses offers various dance classes for students at Lund University.</p>
+                <p>Join us to learn new dance styles and meet fellow dance enthusiasts!</p>
+            </div>
+    
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="#workshops">Workshops</a></p>
+                <p><a href="#bugg">Bugg</a></p>
+                <p><a href="#registration">Class Registration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.link_container').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
