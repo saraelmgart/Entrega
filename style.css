@@ -184,6 +184,10 @@ a {
     border-radius: 15px;
 }
 
+.blue-block h2 {
+    font-weight: normal;
+}
+
 /* The icons in the list of the blue block */
 
 .icon-list {                /* Container of the list */
